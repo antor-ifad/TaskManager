@@ -1,3 +1,30 @@
 @baseUrl = http://localhost:8000/api
+@token = 4|wBp7TguvlsixF7z8EvbuRPqnjniZAMnl2okMqi7x8eb8ec24
 
+
+### Login
+POST {{baseUrl}}/login
+Content-Type: application/json
+Accept: application/json
+Authorization: Bearer {{token}}
+
+{
+    "email": "test@email.com",
+    "password":"12345678"
+}
+
+### Fetch Task
 GET {{baseUrl}}/tasks/11
+
+### Create a task
+POST {{baseUrl}}/tasks
+Content-Type: application/json
+Accept: application/json
+Authorization: Bearer {{token}}
+
+{
+    "title": "Laravel Task Api3",
+    "description":"test",
+    "status": "completed",
+    "due_date":"10-10-2026"
+}
